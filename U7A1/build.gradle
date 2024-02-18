@@ -1,0 +1,32 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.2'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.xyz'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Otras dependencias
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.8'
+    implementation 'org.openapitools:openapi-generator-cli:5.2.1'
+	// OpenAPI Documentation
+dependency("org.springdoc:springdoc-openapi-ui:1.5.8")
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
